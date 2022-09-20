@@ -29,6 +29,11 @@ async function relativize(filepath) {
 
   $("a, link").each(function() {
     relativize($(this), "href");
+    relativize($(this), "data-bg");
+  });
+
+  $("span").each(function() {
+    relativize($(this), "data-bg");
   });
 
   $("img").each(function() {
