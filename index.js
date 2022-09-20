@@ -34,6 +34,10 @@ async function relativize(filepath) {
   $("img").each(function() {
     relativize($(this), "src");
   });
+  
+  $("script").each(function() {
+    relativize($(this), "src");
+  });
 
   $("meta[property='og:image'],meta[name='thumbnail']").each(function() {
     relativize($(this), "content");
