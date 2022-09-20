@@ -1,5 +1,7 @@
 # make-relative
 
+**NOTE: Fork from make-relative. Support <script> tag**
+
 A missing link for IPFS compatibility: this module makes links relative on
 a website, so that one can navigate through the pages when using IPFS. IPFS
 essentially makes websites run in sub-directories, so if you’re using links
@@ -8,7 +10,7 @@ that start with /, then they’ll jump to the wrong place.
 Installation:
 
 ```
-npm install -g https://github.com/tmcw/make-relative
+npm install -g https://github.com/chouhsiang/make-relative
 ```
 
 Usage:
