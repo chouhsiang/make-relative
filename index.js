@@ -20,11 +20,15 @@ async function relativize(filepath) {
   const url = "/" + filepath.replace(/^\./, "");
 
   function relativize(elem, attribute) {
-    const val = elem.attr(attribute);
-    let u = new URL(val, root);
-    if (u.host !== new URL(root).host) return;
-    let relative = path.relative(path.dirname(url), u.pathname);
-    elem.attr(attribute, relative || "./");
+    try {
+      const val = elem.attr(attribute);
+      let u = new URL(val, root);
+      if (u.host !== new URL(root).host) return;
+      let relative = path.relative(path.dirname(url), u.pathname);
+      elem.attr(attribute, relative || "./");
+    } catch(e) {
+      console.log(e);
+    }
   }
 
   $("a, link").each(function() {
